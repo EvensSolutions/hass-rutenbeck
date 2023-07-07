@@ -1,0 +1,12 @@
+{
+    "domain": "rutenbeck_tcr",
+    "version": "1.0.0",
+    "name": "Rutenbeck TCR",
+    "documentation": "https://evens.eu",
+    "issue_tracker": "https://github.com/JorgenEvens/hass-rutenbeck",
+    "dependencies": [],
+    "codeowners": ["Jorgen Evens"],
+    "requirements": ["aiohttp", "asyncio", "pyquery"],
+    "iot_class": "local_polling",
+    "config_flow": true
+}

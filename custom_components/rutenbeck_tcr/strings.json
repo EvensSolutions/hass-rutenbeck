@@ -1,0 +1,14 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "server": "Module IP",
+                    "port": "Module Port",
+                    "user": "User",
+                    "password": "Password"
+                }
+            }
+        }
+    }
+}
