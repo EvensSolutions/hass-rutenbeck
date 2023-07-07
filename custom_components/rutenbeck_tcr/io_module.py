@@ -44,14 +44,17 @@ class IOModule:
     async def pulse(self, id, impulse="00:00:01", state="on"):
         command = "normal" if state == "on" else "reset"
         url = self.server_url('/impl.cgi?ausg' + str(id) + impulse + command)
-        logger.warn(url)
-        # self.post(url)
-        pass
+        await self.post(url)
 
     async def get(self, url):
         async with aiohttp.ClientSession() as session:
             async with session.get(url, auth=self.basic_auth()) as resp:
                 return await resp.text()
+
+    async def post(self, url):
+        async with aiohttp.ClientSession() as session:
+            async with session.post(url, auth=self.basic_auth()) as resp:
+                pass
 
 
     def basic_auth(self):
