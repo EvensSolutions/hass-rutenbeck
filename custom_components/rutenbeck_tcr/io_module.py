@@ -49,7 +49,7 @@ class IOModule:
     async def get(self, url):
         async with aiohttp.ClientSession() as session:
             async with session.get(url, auth=self.basic_auth()) as resp:
-                return await resp.text()
+                return await resp.text(encoding="ISO-8859-1")
 
     async def post(self, url):
         async with aiohttp.ClientSession() as session:
