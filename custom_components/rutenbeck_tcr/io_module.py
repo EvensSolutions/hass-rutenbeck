@@ -67,6 +67,8 @@ class IOModule:
     @property
     def device_info(self):
         return DeviceInfo(
-            identifiers={DOMAIN, self._server},
+            identifiers={
+                (DOMAIN, self._server)
+            },
             name=self._server,
         )
