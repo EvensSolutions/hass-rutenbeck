@@ -3,7 +3,8 @@ import asyncio
 import re
 from pyquery import PyQuery
 
-from .logger import logger
+from homeassistant.helpers.device_registry import DeviceInfo
+
 from .const import (
     DOMAIN,
 
@@ -61,4 +62,11 @@ class IOModule:
         return aiohttp.BasicAuth(
             self._username,
             self._password
+        )
+
+    @property
+    def device_info(self):
+        return DeviceInfo(
+            identifiers={DOMAIN, self._server},
+            name=self._server,
         )
