@@ -19,7 +19,7 @@ class IOPort(CoordinatorEntity, ButtonEntity, SwitchEntity):
         self.should_poll = True
         self.name = port["name"]
 
-        unique_id = "%s.%s" % (module._server, self.name)
+        unique_id = "%s.%s" % (module.name, self.name)
         self.unique_id = generate_entity_id("{}", unique_id, hass=hass)
 
         self.state = False
