@@ -10,8 +10,6 @@ from os import path
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 
-from .logger import logger
-
 from .const import (
     DOMAIN,
 
@@ -22,11 +20,10 @@ from .const import (
 )
 
 async def async_setup_entry(hass, config):
-
     hass.async_create_task(
         hass.config_entries.async_forward_entry_setups(
             config,
-            ["button"]
+            ["button", "switch"]
         )
     )
 
